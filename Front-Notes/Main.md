@@ -61,12 +61,14 @@ npm install -g pnpm
 ## 0.2Vite脚手架快速搭建Vue项目实例
 
 ```shell
-npm init vite@latest my-vue-app -- --template vue
+pnpm init vite@latest my-vue-app -- --template vue
 ```
 
 `my-vue-app`是创建的项目的名称
 
 `temple vue`是指快速搭建一个Vue实例模板
+
+pnpm run dev
 
 
 
@@ -80,7 +82,7 @@ npm i -g eslint
 eslint --init
 ```
 
-
+![image-20230715152342385](Main/image-20230715152342385.png)
 
 ### 0.3.2 Vscode插件安装
 
@@ -123,6 +125,12 @@ module.exports = {
 
 
 
+#### 在webstorm中配置Eslint时可能出现的问题
+
+[error cannot find module '@vue/eslint-config-typescript/recommended'-掘金 (juejin.cn)](https://juejin.cn/s/error cannot find module '@vue%2Feslint-config-typescript%2Frecommended')
+
+
+
 ---
 
 # 1 TypeScript 基础语法
@@ -135,7 +143,7 @@ module.exports = {
 
 ---
 
-# 2 Vue3 
+# 2 Vue3
 
 参考 [Vue.js - 渐进式 JavaScript 框架 | Vue.js (vuejs.org)](https://cn.vuejs.org/)
 
@@ -153,14 +161,128 @@ module.exports = {
 
 ### 2.1 响应式
 
-2.2  
+**ref**
+
+```js 
+import {ref} from "vue"
+
+const name = ref("Tiancy");
+```
+
+  
+
+**toRefs**
+
+```js
+import {toRefs} from "vue"
+
+const {name} = toRefs(1);
+```
+
+
+
+
+
+### 2.2  
 
 ### 2.3 组件
 
-2.3 
+#### 2.3.1 组件通信
 
-（这里还只在单页面中把大部分的语法举例子）
+**props**
+
+```vue
+//子组件
+
+<temple>
+	<div class="son">
+		<h1>
+            我是子组件
+        </h1>   
+        <p>
+            {props.info1}
+        </p>
+    </div>
+</temple>
+
+<script setup lang="ts">
+	// 需要使用到 defineprops 方法去接受父组件传递过来的数据
+	//defineprops 是 vue3 提供方法 ， 不需要引入直接使用
+    const props = defineprops(["info1" , "info2"]);
+    
+</script>
+```
+
+
 
 
 
 ### 2.4 VueRouter
+
+#### 2.4.1 安装依赖
+
+```shell 
+pnpm i vue-router@4
+```
+
+
+
+#### 2.4.2 初始化
+
+在src目录下新建pages和routers文件夹
+
+pages文件夹是用于存储页面文件
+
+routers中有index.ts文件，用于管理路由
+
+![image-20230711203946111](Main/image-20230711203946111.png)
+
+
+
+然后在main.ts里挂载router到vue实例
+
+```js
+import { createApp } from "vue";
+import "./style.css";
+import App from "./App.vue";
+
+import router from "./routers";
+
+const app = createApp(App);
+app.use(router);
+
+app.mount("#app");
+```
+
+
+
+
+
+
+
+---
+
+# 3 element-plus 组件库
+
+## 3.1 安装
+
+```shell
+pnpm i element-plus
+```
+
+
+
+## 3.2 完整导入挂载到Vue实例
+
+```js
+import { createApp } from "vue";
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
+
+const app = createApp(App);
+app.use(ElementPlus);
+app.mount("#app");
+```
+
+
+
