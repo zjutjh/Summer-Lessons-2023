@@ -1,0 +1,1546 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "通讯录",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "用户"
+    },
+    {
+      "name": "联系人"
+    }
+  ],
+  "paths": {
+    "/api/login": {
+      "post": {
+        "summary": "登录",
+        "x-apifox-folder": "用户",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "用户登录\n输入正确的手机号（账号）和密码后\n后端给前端返回用户相关信息",
+        "tags": [
+          "用户"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "phone_num": {
+                    "type": "string",
+                    "title": "手机号"
+                  },
+                  "password": {
+                    "type": "string",
+                    "title": "密码"
+                  }
+                },
+                "x-apifox-orders": [
+                  "phone_num",
+                  "password"
+                ],
+                "required": [
+                  "phone_num",
+                  "password"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "username": {
+                          "type": "string",
+                          "description": "用户名"
+                        },
+                        "sex": {
+                          "type": "string",
+                          "description": "性别"
+                        },
+                        "phone_num": {
+                          "type": "string",
+                          "description": "手机号"
+                        },
+                        "major": {
+                          "type": "string",
+                          "description": "专业"
+                        }
+                      },
+                      "x-apifox-orders": [
+                        "id",
+                        "username",
+                        "sex",
+                        "phone_num",
+                        "major"
+                      ],
+                      "required": [
+                        "id",
+                        "major",
+                        "phone_num",
+                        "sex",
+                        "username"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "01H64KQ4CBXW5H7CSZ0GNCDGTR"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64KQ4CBXW5H7CSZ0GNCDGTR": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ],
+                  "x-apifox-ignore-properties": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "data": {
+                        "id": 1,
+                        "username": "惜寞",
+                        "sex": "男",
+                        "phone_num": "123456789",
+                        "major": "软件工程"
+                      },
+                      "msg": "OK"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [
+                    "01H64M0CY89GRF49H3Q7A39ZGY"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64M0CY89GRF49H3Q7A39ZGY": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "1": {
+                    "summary": "200501 参数错误",
+                    "value": {
+                      "code": 200501,
+                      "data": null,
+                      "msg": "参数错误"
+                    }
+                  },
+                  "2": {
+                    "summary": "200502 用户不存在",
+                    "value": {
+                      "code": 200502,
+                      "data": null,
+                      "msg": "用户不存在"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2913871/apis/api-97910759-run"
+      }
+    },
+    "/api/register": {
+      "post": {
+        "summary": "注册",
+        "x-apifox-folder": "用户",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "用户注册\n输入用户名、性别、手机号、专业、密码（输入两次）信息\n手机号作为后续登陆账号",
+        "tags": [
+          "用户"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "title": "用户名"
+                  },
+                  "sex": {
+                    "type": "string",
+                    "title": "性别"
+                  },
+                  "phone_num": {
+                    "type": "string",
+                    "title": "手机号",
+                    "description": "作为账号登陆，不能重复"
+                  },
+                  "major": {
+                    "type": "string",
+                    "title": "专业"
+                  },
+                  "password": {
+                    "type": "string",
+                    "title": "密码"
+                  },
+                  "confirm_password": {
+                    "type": "string",
+                    "title": "确认密码",
+                    "description": "与第一次密码输入相同"
+                  }
+                },
+                "x-apifox-orders": [
+                  "username",
+                  "sex",
+                  "phone_num",
+                  "major",
+                  "password",
+                  "confirm_password"
+                ],
+                "required": [
+                  "username",
+                  "sex",
+                  "confirm_password",
+                  "password",
+                  "major",
+                  "phone_num"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "null"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "01H64M322W1ZT7G9GVFYF2Z7RA"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64M322W1ZT7G9GVFYF2Z7RA": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ],
+                  "x-apifox-ignore-properties": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "data": null,
+                      "msg": "OK"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [
+                    "01H64M0CY89GRF49H3Q7A39ZGY"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64M0CY89GRF49H3Q7A39ZGY": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "1": {
+                    "summary": "200501 参数错误",
+                    "value": {
+                      "code": 200501,
+                      "data": null,
+                      "msg": "参数错误"
+                    }
+                  },
+                  "2": {
+                    "summary": "200504 手机号已注册",
+                    "value": {
+                      "code": 200504,
+                      "data": null,
+                      "msg": "手机号已注册"
+                    }
+                  },
+                  "3": {
+                    "summary": "200505 密码不一致",
+                    "value": {
+                      "code": 200505,
+                      "data": null,
+                      "msg": "密码不一致"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2913871/apis/api-97910776-run"
+      }
+    },
+    "/api/contact": {
+      "get": {
+        "summary": "获取联系人列表",
+        "x-apifox-folder": "联系人",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "返回联系人列表\n返回联系人列表以及数量",
+        "tags": [
+          "联系人"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "owner_id": {
+                    "type": "integer",
+                    "description": "用户id"
+                  }
+                },
+                "x-apifox-orders": [
+                  "owner_id"
+                ],
+                "required": [
+                  "owner_id"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "contact_list": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer",
+                                "title": "唯一标识"
+                              },
+                              "owner_id": {
+                                "type": "integer",
+                                "title": "所属用户id"
+                              },
+                              "student_id": {
+                                "type": "string",
+                                "title": "学号"
+                              },
+                              "name": {
+                                "type": "string",
+                                "title": "姓名"
+                              },
+                              "sex": {
+                                "type": "string",
+                                "title": "性别"
+                              },
+                              "phone_num": {
+                                "type": "string",
+                                "title": "手机号"
+                              },
+                              "major": {
+                                "type": "string",
+                                "title": "专业"
+                              },
+                              "blacklist": {
+                                "type": "boolean",
+                                "title": "黑名单",
+                                "description": "0表示不加入黑名单，1表示加入黑名单"
+                              }
+                            },
+                            "x-apifox-orders": [
+                              "id",
+                              "owner_id",
+                              "student_id",
+                              "name",
+                              "sex",
+                              "phone_num",
+                              "major",
+                              "blacklist"
+                            ],
+                            "required": [
+                              "id",
+                              "owner_id",
+                              "student_id",
+                              "name",
+                              "sex",
+                              "phone_num",
+                              "major",
+                              "blacklist"
+                            ],
+                            "x-apifox-ignore-properties": []
+                          }
+                        },
+                        "num": {
+                          "type": "integer",
+                          "title": "联系人数量"
+                        }
+                      },
+                      "x-apifox-orders": [
+                        "contact_list",
+                        "num"
+                      ],
+                      "required": [
+                        "contact_list",
+                        "num"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "01H64M7QQAQBKK5MR66Y25X1JQ"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64M7QQAQBKK5MR66Y25X1JQ": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ],
+                  "x-apifox-ignore-properties": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "data": {
+                        "contact_list": [
+                          {
+                            "id": 1,
+                            "owner_id": 1,
+                            "student_id": "202203151111",
+                            "name": "青鸟",
+                            "sex": "男",
+                            "phone_num": "987654321",
+                            "major": "软件工程",
+                            "blacklist": false
+                          }
+                        ],
+                        "num": 1
+                      },
+                      "msg": "OK"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [
+                    "01H64M0CY89GRF49H3Q7A39ZGY"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64M0CY89GRF49H3Q7A39ZGY": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "1": {
+                    "summary": "200501 参数错误",
+                    "value": {
+                      "code": 200501,
+                      "data": null,
+                      "msg": "参数错误"
+                    }
+                  },
+                  "2": {
+                    "summary": "200506 联系人列表为空",
+                    "value": {
+                      "code": 200506,
+                      "data": null,
+                      "msg": "联系人列表为空"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2913871/apis/api-97912340-run"
+      },
+      "post": {
+        "summary": "新建联系人",
+        "x-apifox-folder": "联系人",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "新建联系人\n输入信息：联系人姓名、性别、学号、手机号、专业、是否加入黑名单\n附加信息：所属用户id",
+        "tags": [
+          "联系人"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "owner_id": {
+                    "type": "integer",
+                    "title": "所属用户id"
+                  },
+                  "name": {
+                    "type": "string",
+                    "title": "姓名"
+                  },
+                  "sex": {
+                    "type": "string",
+                    "title": "性别",
+                    "description": "可为空"
+                  },
+                  "student_id": {
+                    "type": "string",
+                    "title": "学号",
+                    "description": "可为空"
+                  },
+                  "phone_num": {
+                    "type": "string",
+                    "title": "手机号"
+                  },
+                  "major": {
+                    "type": "string",
+                    "title": "专业",
+                    "description": "可为空"
+                  },
+                  "blacklist": {
+                    "type": "boolean",
+                    "title": "黑名单",
+                    "description": "0表示不加入黑名单，1表示加入黑名单"
+                  }
+                },
+                "x-apifox-orders": [
+                  "owner_id",
+                  "name",
+                  "sex",
+                  "student_id",
+                  "phone_num",
+                  "major",
+                  "blacklist"
+                ],
+                "required": [
+                  "name",
+                  "blacklist",
+                  "phone_num",
+                  "owner_id"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "null"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "01H64N2WYKA28Z2KPRV65QN44C"
+                  ],
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64N2WYKA28Z2KPRV65QN44C": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  },
+                  "x-apifox-ignore-properties": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "data": null,
+                      "msg": "OK"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [
+                    "01H64M0CY89GRF49H3Q7A39ZGY"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64M0CY89GRF49H3Q7A39ZGY": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "1": {
+                    "summary": "200501 参数错误",
+                    "value": {
+                      "code": 200501,
+                      "data": null,
+                      "msg": "参数错误"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2913871/apis/api-97912341-run"
+      },
+      "put": {
+        "summary": "更新联系人信息",
+        "x-apifox-folder": "联系人",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "更新联系人信息\n将修改后的联系人信息返回给后端（包括id）",
+        "tags": [
+          "联系人"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "title": "唯一标识"
+                  },
+                  "name": {
+                    "type": "string",
+                    "title": "姓名"
+                  },
+                  "sex": {
+                    "type": "string",
+                    "title": "性别",
+                    "description": "可为空"
+                  },
+                  "student_id": {
+                    "type": "string",
+                    "title": "学号",
+                    "description": "可为空"
+                  },
+                  "phone_num": {
+                    "type": "string",
+                    "title": "手机号"
+                  },
+                  "major": {
+                    "type": "string",
+                    "title": "专业",
+                    "description": "可为空"
+                  },
+                  "blacklist": {
+                    "type": "boolean",
+                    "title": "黑名单",
+                    "description": "0表示不加入黑名单，1表示加入黑名单"
+                  }
+                },
+                "x-apifox-orders": [
+                  "id",
+                  "name",
+                  "sex",
+                  "student_id",
+                  "phone_num",
+                  "major",
+                  "blacklist"
+                ],
+                "required": [
+                  "blacklist",
+                  "id",
+                  "name",
+                  "phone_num"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "null"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "01H64NMVAH0VCP6JWERB03P3Q1"
+                  ],
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64NMVAH0VCP6JWERB03P3Q1": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  },
+                  "x-apifox-ignore-properties": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "data": null,
+                      "msg": "OK"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [
+                    "01H64M0CY89GRF49H3Q7A39ZGY"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64M0CY89GRF49H3Q7A39ZGY": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "1": {
+                    "summary": "200501 参数错误",
+                    "value": {
+                      "code": 200501,
+                      "data": null,
+                      "msg": "参数错误"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2913871/apis/api-97912364-run"
+      },
+      "delete": {
+        "summary": "删除联系人",
+        "x-apifox-folder": "联系人",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "删除联系人\n将想要删除联系人的id返回给后端",
+        "tags": [
+          "联系人"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "title": "唯一标识"
+                  }
+                },
+                "x-apifox-orders": [
+                  "id"
+                ],
+                "required": [
+                  "id"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer"
+                    },
+                    "msg": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "null"
+                    }
+                  },
+                  "x-apifox-orders": [
+                    "01H64P8EAVS9WEJ9F4HAHFBVV8"
+                  ],
+                  "required": [
+                    "code",
+                    "msg",
+                    "data"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64P8EAVS9WEJ9F4HAHFBVV8": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  },
+                  "x-apifox-ignore-properties": [
+                    "code",
+                    "msg",
+                    "data"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "data": null,
+                      "msg": "OK"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "",
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-orders": [
+                    "01H64M0CY89GRF49H3Q7A39ZGY"
+                  ],
+                  "x-apifox-refs": {
+                    "01H64M0CY89GRF49H3Q7A39ZGY": {
+                      "$ref": "#/components/schemas/Response",
+                      "x-apifox-overrides": {
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string",
+                              "description": "用户名"
+                            },
+                            "sex": {
+                              "type": "string",
+                              "description": "性别"
+                            },
+                            "phone_num": {
+                              "type": "string",
+                              "description": "手机号"
+                            },
+                            "major": {
+                              "type": "string",
+                              "description": "专业"
+                            }
+                          },
+                          "x-apifox-orders": [
+                            "id",
+                            "username",
+                            "sex",
+                            "phone_num",
+                            "major"
+                          ],
+                          "required": [
+                            "id",
+                            "major",
+                            "phone_num",
+                            "sex",
+                            "username"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "data"
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "1": {
+                    "summary": "200501 参数错误",
+                    "value": {
+                      "code": 200501,
+                      "data": null,
+                      "msg": "参数错误"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox'": "https://www.apifox.cn/web/project/2913871/apis/api-97912371-run"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Response": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "properties": {},
+            "x-apifox-orders": [],
+            "x-apifox-ignore-properties": []
+          }
+        },
+        "x-apifox-orders": [
+          "code",
+          "msg",
+          "data"
+        ],
+        "required": [
+          "code",
+          "msg",
+          "data"
+        ],
+        "x-apifox-ignore-properties": [],
+        "x-apifox-folder": ""
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "127.0.0.1:8080",
+      "description": "测试环境"
+    }
+  ]
+}

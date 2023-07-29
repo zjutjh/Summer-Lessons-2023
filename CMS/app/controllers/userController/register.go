@@ -1,4 +1,4 @@
-package usercontroller
+package userController
 
 import (
 	"CMS/app/models"
