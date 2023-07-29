@@ -2,7 +2,7 @@ package router
 
 import (
 	"CMS/app/controllers/contactController"
-	usercontroller "CMS/app/controllers/userController"
+	"CMS/app/controllers/userController"
 
 	"github.com/gin-gonic/gin"
 )
@@ -12,8 +12,8 @@ func Init(r *gin.Engine) {
 
 	api := r.Group(pre)
 	{
-		api.POST("/login", usercontroller.Login)
-		api.POST("/register", usercontroller.Register)
+		api.POST("/login", userController.Login)
+		api.POST("/register", userController.Register)
 
 		contact := api.Group("/contact")
 		{
