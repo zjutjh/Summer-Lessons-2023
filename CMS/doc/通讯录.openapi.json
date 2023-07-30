@@ -534,29 +534,18 @@
         "tags": [
           "联系人"
         ],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "owner_id": {
-                    "type": "integer",
-                    "description": "用户id"
-                  }
-                },
-                "x-apifox-orders": [
-                  "owner_id"
-                ],
-                "required": [
-                  "owner_id"
-                ],
-                "x-apifox-ignore-properties": []
-              }
+        "parameters": [
+          {
+            "name": "owner_id",
+            "in": "query",
+            "description": "用户id",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "integer"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "成功",
@@ -1537,10 +1526,5 @@
       }
     }
   },
-  "servers": [
-    {
-      "url": "127.0.0.1:8080",
-      "description": "测试环境"
-    }
-  ]
+  "servers": []
 }
