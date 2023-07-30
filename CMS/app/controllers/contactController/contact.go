@@ -104,13 +104,13 @@ func DeleteContact(c *gin.Context) {
 }
 
 type GetContactData struct {
-	OwnerID uint `json:"owner_id" binding:"required"`
+	OwnerID uint `form:"owner_id" binding:"required"`
 }
 
 // 获取联系人列表
 func GetContact(c *gin.Context) {
 	var data GetContactData
-	err := c.ShouldBindJSON(&data)
+	err := c.ShouldBindQuery(&data)
 	if err != nil {
 		utils.JsonErrorResponse(c, 200501, "参数错误")
 		return
