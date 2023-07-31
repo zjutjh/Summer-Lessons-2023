@@ -11,7 +11,8 @@ func CreateContact(contact models.Contact) error {
 }
 
 func UpdateContact(contact models.Contact) error {
-	result := database.DB.Save(&contact)
+	// 与课上不同，不多接收 owner_id 参数，选择使用 omit 忽略该字段的更新
+	result := database.DB.Omit("owner_id").Save(&contact)
 	return result.Error
 }
 

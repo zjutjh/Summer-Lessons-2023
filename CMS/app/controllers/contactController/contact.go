@@ -16,7 +16,7 @@ type CreateContactData struct {
 	Sex       string `json:"sex"`
 	PhoneNum  string `json:"phone_num" binding:"required"`
 	Major     string `json:"major"`
-	Blacklist bool   `json:"blacklist" binding:"required"`
+	Blacklist bool   `json:"blacklist"`
 }
 
 // 添加联系人
@@ -52,7 +52,7 @@ type UpdateContactData struct {
 	Sex       string `json:"sex"`
 	PhoneNum  string `json:"phone_num" binding:"required"`
 	Major     string `json:"major"`
-	Blacklist bool   `json:"blacklist" binding:"required"`
+	Blacklist bool   `json:"blacklist"`
 }
 
 // 更新联系人信息
@@ -121,6 +121,9 @@ func GetContact(c *gin.Context) {
 	if err != nil {
 		if err == gorm.ErrRecordNotFound {
 			utils.JsonErrorResponse(c, 200506, "联系人列表为空")
+			return
+		} else {
+			utils.JsonInternalServerErrorResponse(c)
 			return
 		}
 	}
