@@ -1,26 +1,26 @@
+<script setup lang="ts">
+import showContacts from "../components/showContacter.vue";
+</script>
+
 <template>
-  <el-row>
+  <el-container>
     <el-col :span="8">
       <div>
-        <el-image class="img" src="src/assets/JHcartoon.png">
+        <el-image class="img" src="src/assets/Add.png">
         </el-image>
       </div>
     </el-col>
     <el-col :span="16">
-      <login></login>
+      <showContacts />
     </el-col>
-  </el-row>
+  </el-container>
 </template>
-
-<script setup lang="ts">
-import login from "../components/login.vue";
-</script>
 
 <style scoped>
 .img {
   position: relative;
-  left: 100px;
-  top: -30px;
+  left: 60px;
+  top: -50px;
 }
 @media (max-width: 1010px) {
   .img {

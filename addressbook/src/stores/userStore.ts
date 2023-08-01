@@ -1,39 +1,29 @@
 import {defineStore} from "pinia";
 import {reactive} from "vue";
-import {PersonalInfo} from "../types/personalInfo.ts";
+import {userInfo} from "../types/personalInfo.ts";
 
 const userStore = defineStore(
-	"Id",
+	"user",
 	() => {
-		const idInfo = reactive({
+		const userSession = reactive({
 			id: -1,
-			password: "",
-		});
-
-		const personalInfo = reactive({
-			name: "未登录",
-			sex: true,
-			phoneNumber: "未登录",
+			username: "未登录",
+			sex: "未登录",
+			phone_num: "未登录",
 			major: "未登录",
 		});
 
-		const setIdInfo = (info: {id:number , password:string}) => {
-			idInfo.id = info.id;
-			idInfo.password = info.password;
-		};
-		const setPersonalInfo = (info: PersonalInfo) => {
-			personalInfo.name = info.name;
-			personalInfo.sex = info.sex;
-			personalInfo.phoneNumber = info.phoneNumber;
-			personalInfo.major = info.major;
+		const setUserInfo = (info: userInfo) : void => {
+			userSession.id = info.id;
+			userSession.username = info.username;
+			userSession.sex = info.sex;
+			userSession.phone_num = info.phone_num;
+			userSession.major = info.major;
 		};
 
 		return {
-			idInfo,
-			personalInfo,
-
-			setIdInfo,
-			setPersonalInfo,
+			userSession,
+			setUserInfo,
 		};
 	}
 );

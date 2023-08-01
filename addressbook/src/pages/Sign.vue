@@ -7,13 +7,13 @@
       </div>
     </el-col>
     <el-col :span="16">
-      <login></login>
+      <sign />
     </el-col>
   </el-row>
 </template>
 
 <script setup lang="ts">
-import login from "../components/login.vue";
+import sign from "../components/sign.vue";
 </script>
 
 <style scoped>
