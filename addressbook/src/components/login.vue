@@ -35,6 +35,14 @@ const newLoginStore = loginStore();
 const newUserStore = userStore();
 
 const login = async () => {
+  if (input.value === "" || password.value === "") {
+    ElNotification({
+      title: "登陆失败！",
+      message: h("i", { style: "color: teal" }, "您的账号或密码为空"),
+    });
+    return;
+  }
+
   const loginInfo = ref({
     phone_num: input.value,
     password: password.value,
@@ -62,9 +70,21 @@ if (res.data.msg === "OK" && res.data.code === 200) {
     major: responseData.major
   });
   router.push("/Add");
+
 }
-else {
-  alert("sorry!");
+else if (res.data.msg === "参数错误" && res.data.code === 200501) {
+  ElNotification({
+    title: "登陆失败！",
+    message: h("i", { style: "color: teal" }, "参数错误"),
+  });
+  return;
+}
+else if (res.data.msg === "用户不存在" && res.data.code === 200502) {
+  ElNotification({
+    title: "登陆失败！",
+    message: h("i", { style: "color: teal" }, "用户不存在"),
+  });
+  return;
 }
 
 };

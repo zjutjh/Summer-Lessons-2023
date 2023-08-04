@@ -13,16 +13,18 @@ export default class addService {
 		});
 	}
 
-	static async show (data: {
+	static async show (
 		owner_id: number
-	}) {
+	) {
 		return request({
 			"headers": {
 				"Content-Type": "application/json",
 			},
 			url:"/api/contact",
 			method: "get",
-			data:data
+			params: {
+				owner_id: owner_id
+			}
 		});
 	}
 }

@@ -25,6 +25,9 @@ const userStore = defineStore(
 			userSession,
 			setUserInfo,
 		};
+	},
+	{
+		persist: true
 	}
 );
 

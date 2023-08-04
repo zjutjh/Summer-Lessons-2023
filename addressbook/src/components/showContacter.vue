@@ -26,7 +26,8 @@ const newUserStore = userStore();
 
 onMounted(async () => {
   const owner_id= newUserStore.userSession.id;
-  const res = await addService.show({owner_id});
+  console.log(owner_id);
+  const res = await addService.show(owner_id);
 
   if (res.data.code === 200 && res.data.msg === "OK") {
     tableData.value = res.data.data.contact_list;
