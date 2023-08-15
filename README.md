@@ -8,7 +8,7 @@
 	+ **在插件商店安装 Markdown Preview Enhanced**
 	+ ![](https://image.bluebird.icu/img/231293dd-8d19-4425-8bad-c0b53b843f61.webp)
 	+ **然后右键打开侧边预览即可**
-	+ ![](https://image.bluebird.icu/img/2883b3ed-47ad-4c0f-8ccf-31242e1c7277.webp)
+	+ ![](https://download.tooc.xlj0.com/uploads/160/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230815175333.png)
 + **视频部分可能有口误或者讲错的地方，此外，遇到不理解的地方依旧是希望你可以在群里多提问**
 
 # 学习流程
