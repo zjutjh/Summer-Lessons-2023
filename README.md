@@ -4,8 +4,11 @@
 # 注意
 + **如果是没有编程基础的同学，我们建议是先从 C/C++ 入门，Go 的语法和 C/C++ 还是很相似的，学习完 C/C++ 后再上手会更好**
 + **视频和 markdown 文档建议一起观看，可能部分视频中没提到的内容会在markdown 文档补充**
-	+ **markdown 文档（以 .md 结尾）可以使用 VSCode（安装见第一节课） 打开，右键打开侧边预览**
-	+ ![](https://image.bluebird.icu/img/e376b8f9-3bfa-4f14-a63f-41486a7d0872.webp)
+	+ **markdown 文档（以 .md 结尾）可以使用 VSCode（安装见第一节课） 打开**
+	+ **在插件商店安装 Markdown Preview Enhanced**
+	+ ![](https://image.bluebird.icu/img/231293dd-8d19-4425-8bad-c0b53b843f61.webp)
+	+ **然后右键打开侧边预览即可**
+	+ ![](https://image.bluebird.icu/img/01c2de7c-692d-4ad0-ad3a-f49cd3372d1e.webp)
 + **视频部分可能有口误或者讲错的地方，此外，遇到不理解的地方依旧是希望你可以在群里多提问**
 
 # 学习流程
